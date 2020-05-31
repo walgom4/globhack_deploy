@@ -82,27 +82,27 @@ WSGI_APPLICATION = 'back_sstsoft.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'NAME': 'globhack',
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'USER': 'globhack',
-#         'PASSWORD': 'globhack',
-#         'PORT':'5433',
-#         'HOST':'localhost'
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'NAME': 'globhack_db',
-		'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'USER': 'globhack_us',
-        'PASSWORD': 'globhack_pass',
-        'PORT':'5432',
+        'NAME': 'globhack',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'globhack',
+        'PASSWORD': 'globhack',
+        'PORT':'5433',
         'HOST':'localhost'
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'NAME': 'globhack_db',
+# 		'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'USER': 'globhack_us',
+#         'PASSWORD': 'globhack_pass',
+#         'PORT':'5432',
+#         'HOST':'localhost'
+#     }
+# }
 
 
 # Password validation
@@ -141,29 +141,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# STATIC_URL = '/globhack_static/'
-# MEDIA_ROOT = 'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media'
-# MEDIA_URL = 'http://198758ce7e72.ngrok.io/globhack_static/media/'
-# STATIC_ROOT = 'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static'
-# STATICFILES_DIRS = (
-#     'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/',
-#     'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/users',
-#     'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/health_register',
-#     'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/resources',
-# )
+STATIC_URL = '/globhack_static/'
+MEDIA_ROOT = 'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media'
+MEDIA_URL = 'http://198758ce7e72.ngrok.io/globhack_static/media/'
+STATIC_ROOT = 'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static'
+STATICFILES_DIRS = (
+    'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/',
+    'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/users',
+    'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/health_register',
+    'C:/Users/walgom/Documents/elxampp/htdocs/globhack_static/media/resources',
+)
 
 # server conf
-static files configuration server
-STATIC_URL = 'http://api.oportunidadencasa.com/static/'
-MEDIA_ROOT = '/home/walgom44/webapps/globhack_static/media/'
-MEDIA_URL = '/static/media/'
-STATIC_ROOT = '/home/walgom44/webapps/globhack_static'
-STATICFILES_DIRS = (
-    '/home/walgom44/webapps/globhack_static/media/',
-    '/home/walgom44/webapps/globhack_static/media/users',
-    '/home/walgom44/webapps/globhack_static/media/health_register',
-    '/home/walgom44/webapps/globhack_static/media/resources',
-)
+# static files configuration server
+# STATIC_URL = 'http://api.oportunidadencasa.com/static/'
+# MEDIA_ROOT = '/home/walgom44/webapps/globhack_static/media/'
+# MEDIA_URL = '/static/media/'
+# STATIC_ROOT = '/home/walgom44/webapps/globhack_static'
+# STATICFILES_DIRS = (
+#     '/home/walgom44/webapps/globhack_static/media/',
+#     '/home/walgom44/webapps/globhack_static/media/users',
+#     '/home/walgom44/webapps/globhack_static/media/health_register',
+#     '/home/walgom44/webapps/globhack_static/media/resources',
+# )
 # end static files configuration server
 
 CORS_ORIGIN_ALLOW_ALL = True
