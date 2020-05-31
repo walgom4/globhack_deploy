@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from mainapp.serializers import UserSerializer, areaSerializer, epsSerializer, genderSerializer, idTypeSerializer, healthRegisterSerializer, userHealthRegisterSerializer, transportSerializer, resourcesSerializer, entitySerializer, entityTypeSerializer, questionSerializer, answersSerializer
-from mainapp.models import User, area, eps, gender, idType, healthRegister, transport, resources, entity, entityType, question, answers
+from mainapp.serializers import UserSerializer, areaSerializer, epsSerializer, genderSerializer, idTypeSerializer, healthRegisterSerializer, userHealthRegisterSerializer, transportSerializer, resourcesSerializer, entitySerializer, entityTypeSerializer, questionSerializer, answersSerializer, scheduleSerializer
+from mainapp.models import User, area, eps, gender, idType, healthRegister, transport, resources, entity, entityType, question, answers, schedule
 
 # start restframework
 from rest_framework import viewsets, generics
@@ -252,6 +252,23 @@ class questionViewSet(viewsets.ModelViewSet):
 class answersViewSet(viewsets.ModelViewSet):
     queryset = answers.objects.all()
     serializer_class = answersSerializer
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    ordering_fields = [ 'id']
+
+    # permisos
+    def get_permissions(self):
+        permission_classes = []
+        if self.action == 'create':
+            permission_classes = [AllowAny]
+        elif self.action == 'retrieve' or self.action == 'update' or self.action == 'partial_update':
+            permission_classes = [AllowAny]
+        elif self.action == 'list' or self.action == 'destroy':
+            permission_classes = [AllowAny]
+        return [permission() for permission in permission_classes]
+
+class scheduleViewSet(viewsets.ModelViewSet):
+    queryset = schedule.objects.all()
+    serializer_class = scheduleSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     ordering_fields = [ 'id']
 
